@@ -1,19 +1,30 @@
+function! PresetBluetoothMode()
+    if $bluetooth == 1
+        map ` <ESC>
+        cmap ` <ESC>
+        imap ` <ESC>
+    endif
+endfunction
+
 function! ToggleBluetoothMode()
     if $bluetooth == 1
         echo "Toggle to Normal Mode"
         let $bluetooth = 0
 
-        unmap df
-        cunmap df
-        iunmap df
+        unmap `
+        cunmap `
+        iunmap `
     else
         echo "Toggle to Bluetooth Mode"
         let $bluetooth = 1
 
-        map df <ESC>
-        cmap df <ESC>
-        imap df <ESC>
+        map ` <ESC>
+        cmap ` <ESC>
+        imap ` <ESC>
     endif
 endfunction
 
 command! -nargs=0 ToggleBluetoothMode call ToggleBluetoothMode()
+
+call PresetBluetoothMode()
+
