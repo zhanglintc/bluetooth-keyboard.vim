@@ -1,5 +1,7 @@
 function! PresetBluetoothMode()
-    if $bluetooth == 1
+    if &term == 'xterm-256color' || $bluetooth == 1
+        let $bluetooth = 1
+
         map ` <ESC>
         cmap ` <ESC>
         imap ` <ESC>
