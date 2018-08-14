@@ -10,14 +10,14 @@ endfunction
 
 function! ToggleBluetoothMode()
     if $bluetooth == 1
-        echo "Toggle to Normal Mode"
+        echo "Toggle to [Normal] Mode"
         let $bluetooth = 0
 
         unmap `
         cunmap `
         iunmap `
     else
-        echo "Toggle to Bluetooth Mode"
+        echo "Toggle to [Bluetooth] Mode"
         let $bluetooth = 1
 
         map ` <ESC>
