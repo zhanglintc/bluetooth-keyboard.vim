@@ -1,4 +1,7 @@
 function! PresetBluetoothMode()
+    " [Normal] mode at start
+    return
+
     if &term == 'xterm-256color' || $bluetooth == 1
         let $bluetooth = 1
 
